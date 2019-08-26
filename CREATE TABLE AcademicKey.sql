@@ -6,7 +6,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE TABLE dbo.[AcademicKey] (
+CREATE TABLE [custom].[AcademicKey] (
 	[id] [uniqueidentifier]
 		CONSTRAINT [df_AcademicKey_id] DEFAULT(NEWSEQUENTIALID())
 	,[PEOPLE_CODE_ID] [nvarchar](10) NOT NULL

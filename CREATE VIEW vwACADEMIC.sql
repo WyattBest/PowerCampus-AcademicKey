@@ -24,7 +24,7 @@ Revision History:
 SELECT [id]
 	,A.*
 FROM [dbo].[ACADEMIC] A
-INNER JOIN [dbo].[AcademicKey] AK
+INNER JOIN [custom].[AcademicKey] AK
 	ON A.[PEOPLE_CODE_ID] = AK.[PEOPLE_CODE_ID]
 		AND A.[ACADEMIC_YEAR] = AK.[ACADEMIC_YEAR]
 		AND A.[ACADEMIC_TERM] = AK.[ACADEMIC_TERM]
