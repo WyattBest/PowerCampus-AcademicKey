@@ -9,7 +9,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE VIEW [dbo].[vwACADEMIC]
+CREATE VIEW [custom].[vwACADEMIC]
 AS
 /***********************************************************************
 Description:
