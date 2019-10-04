@@ -9,7 +9,7 @@ The `ACADEMIC` table has only a composit primary key, and many of the constituen
 Imagine a student applies and is accepted for An Associates of Arts in Program A via a third-party CRM. Your snazzy bi-directional integration pushes this into PowerCampus. The student then decides to register for a Bachelor of Arts in Program A, and the powers that be allow this. The registrar changes the `PROGRAM` column in PowerCampus. Now the primary key has changed and your integration is broken. :-(
 
 # What?
-Effectively, this method will give you a primary uniqueidentifier (GUID or UUID) on session rows in `ACADEMIC`. Rollup records are excluded because I can't think of why you'd want them.
+Effectively, this method will give you a primary uniqueidentifier (GUID or UUID) on session rows in `ACADEMIC`. (Rollup records are excluded.)
 
 Using the included `custom.vwACADEMIC`, you can select, update, and delete against the ACADEMIC table using the unique key.
 
