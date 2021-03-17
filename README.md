@@ -1,7 +1,5 @@
 # PowerCampus-AcademicKey
- Unique key add-on for PowerCampus's ACADEMIC table
- 
- **This is still in alpha! Don't deploy to production.**
+ Unique key add-on for PowerCampus's ACADEMIC table. MCNY has been using this customization in production for more than two years.
 
 # Why?
 The `ACADEMIC` table has only a composit primary key, and many of the constituent columns change. A lot. This makes integrating with other systems terribly difficult.
