@@ -5,10 +5,8 @@ SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
 GO
 
-
 CREATE TABLE [custom].[AcademicKey] (
-	[id] [uniqueidentifier]
-		CONSTRAINT [df_AcademicKey_id] DEFAULT(NEWSEQUENTIALID())
+	[id] [uniqueidentifier] CONSTRAINT [df_AcademicKey_id] DEFAULT(NEWSEQUENTIALID())
 	,[PEOPLE_CODE_ID] [nvarchar](10) NOT NULL
 	,[ACADEMIC_YEAR] [nvarchar](4) NOT NULL
 	,[ACADEMIC_TERM] [nvarchar](10) NOT NULL
@@ -16,6 +14,7 @@ CREATE TABLE [custom].[AcademicKey] (
 	,[PROGRAM] [nvarchar](6) NOT NULL
 	,[DEGREE] [nvarchar](6) NOT NULL
 	,[CURRICULUM] [nvarchar](6) NOT NULL
+	,[RecruiterApplicationId] int NULL
 	,CONSTRAINT [pk_AcademicKey] PRIMARY KEY NONCLUSTERED ([id])
 	,CONSTRAINT [ak_AcademicKey] UNIQUE CLUSTERED (
 		[PEOPLE_CODE_ID]
@@ -35,7 +34,11 @@ CREATE TABLE [custom].[AcademicKey] (
 		,[DEGREE]
 		,[CURRICULUM]
 		) REFERENCES [dbo].[ACADEMIC]([PEOPLE_CODE_ID], [ACADEMIC_YEAR], [ACADEMIC_TERM], [ACADEMIC_SESSION], [PROGRAM], [DEGREE], [CURRICULUM])
-	ON UPDATE CASCADE
-	ON DELETE CASCADE
+		ON UPDATE CASCADE
+		ON DELETE CASCADE
+	,CONSTRAINT [fk_RecruiterApplicationId]
+		FOREIGN KEY ([RecruiterApplicationId])
+		REFERENCES [dbo].[RecruiterApplication] ([RecruiterApplicationId])
+		ON UPDATE CASCADE
 	)
 GO
