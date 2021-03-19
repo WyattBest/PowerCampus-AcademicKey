@@ -1,4 +1,4 @@
-USE Campus6_test;
+USE [Campus6]
 GO
 
 --Use this if you implemented the AcademicKey table before RecruiterApplicationId column was added.
