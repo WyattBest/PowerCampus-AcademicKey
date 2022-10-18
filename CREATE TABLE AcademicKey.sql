@@ -40,6 +40,7 @@ CREATE TABLE [custom].[AcademicKey] (
 		FOREIGN KEY ([RecruiterApplicationId])
 		REFERENCES [dbo].[RecruiterApplication] ([RecruiterApplicationId])
 		ON UPDATE CASCADE
+		ON DELETE SET NULL
 	)
 GO
 
